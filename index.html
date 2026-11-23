@@ -352,6 +352,13 @@
     .modal-body { padding: 16px 22px 24px; }
     .modal-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
     .modal-title { font-size: 17px; font-weight: 600; }
+    .modal-en {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-top: 2px;
+    }
     .modal-close {
       background: transparent;
       border: none;
@@ -456,6 +463,7 @@
         <div>
           <div class="card-cat" id="modalCat"></div>
           <div class="modal-title" id="modalTitle"></div>
+          <div class="modal-en" id="modalEn"></div>
         </div>
         <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
       </div>
@@ -467,455 +475,502 @@
 
 <script>
 const products = [
-{
-"cat": "RING",
-"title": "세메터리 크로스 링",
-"desc": "925 스털링 실버 · 밴드 전체를 감싸는 크로스 패턴을 뚫음(컷아웃) 기법으로 살린 와이드 링. 유화 착색으로 음영이 깊게 남습니다 · 주문제작 1~2주 소요",
-"slug": "ring-cemetery-cross",
-"cover": "images/thumbs/ring-cemetery-cross-1.jpg",
-"gallery": [
-"images/ring-cemetery-cross-1.jpg",
-"images/ring-cemetery-cross-2.jpg",
-"images/ring-cemetery-cross-3.jpg",
-"images/ring-cemetery-cross-4.jpg",
-"images/ring-cemetery-cross-5.jpg",
-"images/ring-cemetery-cross-6.jpg",
-"images/ring-cemetery-cross-7.jpg",
-"images/ring-cemetery-cross-8.jpg",
-"images/ring-cemetery-cross-9.jpg",
-"images/ring-cemetery-cross-10.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-cemetery-cross-1.jpg",
-"images/thumbs/ring-cemetery-cross-2.jpg",
-"images/thumbs/ring-cemetery-cross-3.jpg",
-"images/thumbs/ring-cemetery-cross-4.jpg",
-"images/thumbs/ring-cemetery-cross-5.jpg",
-"images/thumbs/ring-cemetery-cross-6.jpg",
-"images/thumbs/ring-cemetery-cross-7.jpg",
-"images/thumbs/ring-cemetery-cross-8.jpg",
-"images/thumbs/ring-cemetery-cross-9.jpg",
-"images/thumbs/ring-cemetery-cross-10.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "세메터리 크로스 파베 링",
-"desc": "925 스털링 실버 · 세메터리 크로스 라인에 스톤 세팅을 더한 파베 버전. 손가락을 감싸는 넓은 밴드가 포인트입니다 · 주문제작 1~2주 소요",
-"slug": "ring-cemetery-cross-pave",
-"cover": "images/thumbs/ring-cemetery-cross-pave-1.jpg",
-"gallery": [
-"images/ring-cemetery-cross-pave-1.jpg",
-"images/ring-cemetery-cross-pave-2.jpg",
-"images/ring-cemetery-cross-pave-3.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-cemetery-cross-pave-1.jpg",
-"images/thumbs/ring-cemetery-cross-pave-2.jpg",
-"images/thumbs/ring-cemetery-cross-pave-3.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "버블검 플러스 크로스 링",
-"desc": "925 스털링 실버 · 돔 형태로 도톰하게 부풀린 플러스 크로스 모티프 링. 손등 쪽에 볼륨이 살아 있습니다 · 주문제작 1~2주 소요",
-"slug": "ring-bubblegum-plus",
-"cover": "images/thumbs/ring-bubblegum-plus-1.jpg",
-"gallery": [
-"images/ring-bubblegum-plus-1.jpg",
-"images/ring-bubblegum-plus-2.jpg",
-"images/ring-bubblegum-plus-3.jpg",
-"images/ring-bubblegum-plus-4.jpg",
-"images/ring-bubblegum-plus-5.jpg",
-"images/ring-bubblegum-plus-6.jpg",
-"images/ring-bubblegum-plus-7.jpg",
-"images/ring-bubblegum-plus-8.jpg",
-"images/ring-bubblegum-plus-9.jpg",
-"images/ring-bubblegum-plus-10.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-bubblegum-plus-1.jpg",
-"images/thumbs/ring-bubblegum-plus-2.jpg",
-"images/thumbs/ring-bubblegum-plus-3.jpg",
-"images/thumbs/ring-bubblegum-plus-4.jpg",
-"images/thumbs/ring-bubblegum-plus-5.jpg",
-"images/thumbs/ring-bubblegum-plus-6.jpg",
-"images/thumbs/ring-bubblegum-plus-7.jpg",
-"images/thumbs/ring-bubblegum-plus-8.jpg",
-"images/thumbs/ring-bubblegum-plus-9.jpg",
-"images/thumbs/ring-bubblegum-plus-10.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "플러스 크로스 링",
-"desc": "925 스털링 실버 · 얇은 밴드 위에 단정하게 올린 플러스 크로스 모티프. 데일리로 부담 없는 두께입니다 · 주문제작 1~2주 소요",
-"slug": "ring-plus-cross",
-"cover": "images/thumbs/ring-plus-cross-1.jpg",
-"gallery": [
-"images/ring-plus-cross-1.jpg",
-"images/ring-plus-cross-2.jpg",
-"images/ring-plus-cross-3.jpg",
-"images/ring-plus-cross-4.jpg",
-"images/ring-plus-cross-5.jpg",
-"images/ring-plus-cross-6.jpg",
-"images/ring-plus-cross-7.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-plus-cross-1.jpg",
-"images/thumbs/ring-plus-cross-2.jpg",
-"images/thumbs/ring-plus-cross-3.jpg",
-"images/thumbs/ring-plus-cross-4.jpg",
-"images/thumbs/ring-plus-cross-5.jpg",
-"images/thumbs/ring-plus-cross-6.jpg",
-"images/thumbs/ring-plus-cross-7.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "플로럴 크로스 링",
-"desc": "925 스털링 실버 · 플로럴 크로스 모티프를 입체적으로 살린 밴드 링. 빛에 따라 결이 다르게 보입니다 · 주문제작 1~2주 소요",
-"slug": "ring-floral-cross",
-"cover": "images/thumbs/ring-floral-cross-1.jpg",
-"gallery": [
-"images/ring-floral-cross-1.jpg",
-"images/ring-floral-cross-2.jpg",
-"images/ring-floral-cross-3.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-floral-cross-1.jpg",
-"images/thumbs/ring-floral-cross-2.jpg",
-"images/thumbs/ring-floral-cross-3.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "크로스 와이어 밴드 링",
-"desc": "925 스털링 실버 · 세 줄 와이어를 겹쳐 올린 밴드에 크로스 디테일을 감아 올린 링 · 주문제작 1~2주 소요",
-"slug": "ring-cross-wire-band",
-"cover": "images/thumbs/ring-cross-wire-band-1.jpg",
-"gallery": [
-"images/ring-cross-wire-band-1.jpg",
-"images/ring-cross-wire-band-2.jpg",
-"images/ring-cross-wire-band-3.jpg",
-"images/ring-cross-wire-band-4.jpg",
-"images/ring-cross-wire-band-5.jpg",
-"images/ring-cross-wire-band-6.jpg",
-"images/ring-cross-wire-band-7.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-cross-wire-band-1.jpg",
-"images/thumbs/ring-cross-wire-band-2.jpg",
-"images/thumbs/ring-cross-wire-band-3.jpg",
-"images/thumbs/ring-cross-wire-band-4.jpg",
-"images/thumbs/ring-cross-wire-band-5.jpg",
-"images/thumbs/ring-cross-wire-band-6.jpg",
-"images/thumbs/ring-cross-wire-band-7.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "클래식 와이드 밴드 링",
-"desc": "925 스털링 실버 · 각인 디테일이 들어간 두툼한 라운드 밴드 링. 단독 착용에 무게감이 있습니다 · 주문제작 1~2주 소요",
-"slug": "ring-classic-wide-band",
-"cover": "images/thumbs/ring-classic-wide-band-1.jpg",
-"gallery": [
-"images/ring-classic-wide-band-1.jpg",
-"images/ring-classic-wide-band-2.jpg",
-"images/ring-classic-wide-band-3.jpg",
-"images/ring-classic-wide-band-4.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-classic-wide-band-1.jpg",
-"images/thumbs/ring-classic-wide-band-2.jpg",
-"images/thumbs/ring-classic-wide-band-3.jpg",
-"images/thumbs/ring-classic-wide-band-4.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "크로스 참 링",
-"desc": "925 스털링 실버 · 각인 밴드에 크로스 참을 달아 움직임이 있는 링 · 주문제작 1~2주 소요",
-"slug": "ring-cross-charm",
-"cover": "images/thumbs/ring-cross-charm-1.jpg",
-"gallery": [
-"images/ring-cross-charm-1.jpg",
-"images/ring-cross-charm-2.jpg",
-"images/ring-cross-charm-3.jpg",
-"images/ring-cross-charm-4.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-cross-charm-1.jpg",
-"images/thumbs/ring-cross-charm-2.jpg",
-"images/thumbs/ring-cross-charm-3.jpg",
-"images/thumbs/ring-cross-charm-4.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "플로럴 크로스 파베 링",
-"desc": "925 스털링 실버 · 정교한 플로럴 크로스 세팅과 스톤 디테일 · 주문제작 1~2주 소요",
-"slug": "ring-floral-pave",
-"cover": "images/thumbs/ring-floral-pave-1.jpg",
-"gallery": [
-"images/ring-floral-pave-1.jpg",
-"images/ring-floral-pave-2.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-floral-pave-1.jpg",
-"images/thumbs/ring-floral-pave-2.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "타이니 크로스 밴드 링",
-"desc": "925 스털링 실버 · 입체감 있는 연속 크로스 밴드 디자인 · 주문제작 1~2주 소요",
-"slug": "ring-tiny-cross",
-"cover": "images/thumbs/ring-tiny-cross-1.jpg",
-"gallery": [
-"images/ring-tiny-cross-1.jpg",
-"images/ring-tiny-cross-2.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-tiny-cross-1.jpg",
-"images/thumbs/ring-tiny-cross-2.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "크로스 패턴 기어 밴드 링",
-"desc": "925 스털링 실버 · 유화 착색으로 음영이 살아 있는 밴드 링 · 주문제작 1~2주 소요",
-"slug": "ring-pattern-band",
-"cover": "images/thumbs/ring-pattern-band-1.jpg",
-"gallery": [
-"images/ring-pattern-band-1.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-pattern-band-1.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "포에버 스페이서 링",
-"desc": "925 스털링 실버 · 6mm 폭의 묵직한 스페이서 라인. 레이어드의 중심이 되는 링 · 주문제작 1~2주 소요",
-"slug": "ring-forever",
-"cover": "images/thumbs/ring-forever-1.jpg",
-"gallery": [
-"images/ring-forever-1.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-forever-1.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "클래식 925 스페이서 링",
-"desc": "925 스털링 실버 · 깔끔한 레터링 각인과 균형 잡힌 두께감 · 주문제작 1~2주 소요",
-"slug": "ring-spacer-white",
-"cover": "images/thumbs/ring-spacer-white-1.jpg",
-"gallery": [
-"images/ring-spacer-white-1.jpg",
-"images/ring-spacer-white-2.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-spacer-white-1.jpg",
-"images/thumbs/ring-spacer-white-2.jpg"
-]
-},
-{
-"cat": "RING",
-"title": "더블 스페이서 커플 링",
-"desc": "925 스털링 실버 · 커플·우정 링으로 추천하는 스페이서 페어 · 주문제작 1~2주 소요",
-"slug": "ring-spacer-pair",
-"cover": "images/thumbs/ring-spacer-pair-1.jpg",
-"gallery": [
-"images/ring-spacer-pair-1.jpg",
-"images/ring-spacer-pair-2.jpg"
-],
-"thumbs": [
-"images/thumbs/ring-spacer-pair-1.jpg",
-"images/thumbs/ring-spacer-pair-2.jpg"
-]
-},
-{
-"cat": "NECKLACE",
-"title": "스털링 볼 체인 네크리스",
-"desc": "925 스털링 실버 · 볼 체인에 참 펜던트를 조합한 네크리스. 각인 배럴 클래스프로 여밉니다 · 주문제작 1~2주 소요",
-"slug": "necklace-ballchain",
-"cover": "images/thumbs/necklace-ballchain-1.jpg",
-"gallery": [
-"images/necklace-ballchain-1.jpg",
-"images/necklace-ballchain-2.jpg",
-"images/necklace-ballchain-3.jpg",
-"images/necklace-ballchain-4.jpg",
-"images/necklace-ballchain-5.jpg",
-"images/necklace-ballchain-6.jpg",
-"images/necklace-ballchain-7.jpg"
-],
-"thumbs": [
-"images/thumbs/necklace-ballchain-1.jpg",
-"images/thumbs/necklace-ballchain-2.jpg",
-"images/thumbs/necklace-ballchain-3.jpg",
-"images/thumbs/necklace-ballchain-4.jpg",
-"images/thumbs/necklace-ballchain-5.jpg",
-"images/thumbs/necklace-ballchain-6.jpg",
-"images/thumbs/necklace-ballchain-7.jpg"
-]
-},
-{
-"cat": "NECKLACE",
-"title": "크로스 펜던트 네크리스",
-"desc": "925 스털링 실버 · 얇은 체인에 작은 크로스 펜던트를 매치한 데일리 네크리스 · 주문제작 1~2주 소요",
-"slug": "necklace-cross-pendant",
-"cover": "images/thumbs/necklace-cross-pendant-1.jpg",
-"gallery": [
-"images/necklace-cross-pendant-1.jpg",
-"images/necklace-cross-pendant-2.jpg",
-"images/necklace-cross-pendant-3.jpg",
-"images/necklace-cross-pendant-4.jpg",
-"images/necklace-cross-pendant-5.jpg",
-"images/necklace-cross-pendant-6.jpg",
-"images/necklace-cross-pendant-7.jpg",
-"images/necklace-cross-pendant-8.jpg"
-],
-"thumbs": [
-"images/thumbs/necklace-cross-pendant-1.jpg",
-"images/thumbs/necklace-cross-pendant-2.jpg",
-"images/thumbs/necklace-cross-pendant-3.jpg",
-"images/thumbs/necklace-cross-pendant-4.jpg",
-"images/thumbs/necklace-cross-pendant-5.jpg",
-"images/thumbs/necklace-cross-pendant-6.jpg",
-"images/thumbs/necklace-cross-pendant-7.jpg",
-"images/thumbs/necklace-cross-pendant-8.jpg"
-]
-},
-{
-"cat": "NECKLACE",
-"title": "퍼플 파베 더블 크로스 네크리스",
-"desc": "925 스털링 실버 · 퍼플 파베 크로스와 대거 크로스 두 개를 나란히 매단 네크리스 · 주문제작 1~2주 소요",
-"slug": "necklace-purple-pave-double",
-"cover": "images/thumbs/necklace-purple-pave-double-1.jpg",
-"gallery": [
-"images/necklace-purple-pave-double-1.jpg",
-"images/necklace-purple-pave-double-2.jpg",
-"images/necklace-purple-pave-double-3.jpg",
-"images/necklace-purple-pave-double-4.jpg"
-],
-"thumbs": [
-"images/thumbs/necklace-purple-pave-double-1.jpg",
-"images/thumbs/necklace-purple-pave-double-2.jpg",
-"images/thumbs/necklace-purple-pave-double-3.jpg",
-"images/thumbs/necklace-purple-pave-double-4.jpg"
-]
-},
-{
-"cat": "NECKLACE",
-"title": "스털링 체인 네크리스",
-"desc": "925 스털링 실버 · 가는 롤 체인 단독 네크리스. 펜던트를 따로 매치하기 좋습니다 · 주문제작 1~2주 소요",
-"slug": "necklace-roll-chain",
-"cover": "images/thumbs/necklace-roll-chain-1.jpg",
-"gallery": [
-"images/necklace-roll-chain-1.jpg",
-"images/necklace-roll-chain-2.jpg"
-],
-"thumbs": [
-"images/thumbs/necklace-roll-chain-1.jpg",
-"images/thumbs/necklace-roll-chain-2.jpg"
-]
-},
-{
-"cat": "NECKLACE",
-"title": "펜던트 컬렉션",
-"desc": "925 스털링 실버 · 다양한 쉐입의 시그니처 펜던트 라인 · 주문제작 1~2주 소요",
-"slug": "necklace-pendant-set",
-"cover": "images/thumbs/necklace-pendant-set-1.jpg",
-"gallery": [
-"images/necklace-pendant-set-1.jpg"
-],
-"thumbs": [
-"images/thumbs/necklace-pendant-set-1.jpg"
-]
-},
-{
-"cat": "PENDANT",
-"title": "대거 크로스 펜던트",
-"desc": "925 스털링 실버 · 단검 형태로 길게 뻗은 크로스 펜던트. 체인에 걸어 단독으로 매치합니다 · 주문제작 1~2주 소요",
-"slug": "pendant-dagger-cross",
-"cover": "images/thumbs/pendant-dagger-cross-1.jpg",
-"gallery": [
-"images/pendant-dagger-cross-1.jpg",
-"images/pendant-dagger-cross-2.jpg",
-"images/pendant-dagger-cross-3.jpg",
-"images/pendant-dagger-cross-4.jpg",
-"images/pendant-dagger-cross-5.jpg",
-"images/pendant-dagger-cross-6.jpg",
-"images/pendant-dagger-cross-7.jpg",
-"images/pendant-dagger-cross-8.jpg"
-],
-"thumbs": [
-"images/thumbs/pendant-dagger-cross-1.jpg",
-"images/thumbs/pendant-dagger-cross-2.jpg",
-"images/thumbs/pendant-dagger-cross-3.jpg",
-"images/thumbs/pendant-dagger-cross-4.jpg",
-"images/thumbs/pendant-dagger-cross-5.jpg",
-"images/thumbs/pendant-dagger-cross-6.jpg",
-"images/thumbs/pendant-dagger-cross-7.jpg",
-"images/thumbs/pendant-dagger-cross-8.jpg"
-]
-},
-{
-"cat": "PENDANT",
-"title": "컬러 스톤 크로스 펜던트",
-"desc": "925 스털링 실버 · 퍼플·블루·그린·핑크 컬러 스톤을 세팅한 크로스 펜던트. 컬러별 선택 가능 · 주문제작 1~2주 소요",
-"slug": "pendant-color-stone-cross",
-"cover": "images/thumbs/pendant-color-stone-cross-1.jpg",
-"gallery": [
-"images/pendant-color-stone-cross-1.jpg",
-"images/pendant-color-stone-cross-2.jpg",
-"images/pendant-color-stone-cross-3.jpg",
-"images/pendant-color-stone-cross-4.jpg",
-"images/pendant-color-stone-cross-5.jpg",
-"images/pendant-color-stone-cross-6.jpg"
-],
-"thumbs": [
-"images/thumbs/pendant-color-stone-cross-1.jpg",
-"images/thumbs/pendant-color-stone-cross-2.jpg",
-"images/thumbs/pendant-color-stone-cross-3.jpg",
-"images/thumbs/pendant-color-stone-cross-4.jpg",
-"images/thumbs/pendant-color-stone-cross-5.jpg",
-"images/thumbs/pendant-color-stone-cross-6.jpg"
-]
-},
-{
-"cat": "BRACELET",
-"title": "체인 & 크로스 브레이슬릿 컬렉션",
-"desc": "925 스털링 실버 · 단독 착용이나 시계 레이어드에 어울리는 브레이슬릿 · 주문제작 1~2주 소요",
-"slug": "bracelet-collection",
-"cover": "images/thumbs/bracelet-collection-1.jpg",
-"gallery": [
-"images/bracelet-collection-1.jpg"
-],
-"thumbs": [
-"images/thumbs/bracelet-collection-1.jpg"
-]
-},
-{
-"cat": "BRACELET",
-"title": "컬러 스트링 브레이슬릿",
-"desc": "925 스털링 실버 참 + 컬러 스트링 · 레드·옐로우·핑크·퍼플·블랙·블루 컬러 선택 가능 · 주문제작 1~2주 소요",
-"slug": "bracelet-color-string",
-"cover": "images/thumbs/bracelet-color-string-1.jpg",
-"gallery": [
-"images/bracelet-color-string-1.jpg",
-"images/bracelet-color-string-2.jpg",
-"images/bracelet-color-string-3.jpg"
-],
-"thumbs": [
-"images/thumbs/bracelet-color-string-1.jpg",
-"images/thumbs/bracelet-color-string-2.jpg",
-"images/thumbs/bracelet-color-string-3.jpg"
-]
-}
+ {
+  "cat": "RING",
+  "title": "세메터리 크로스 링",
+  "en": "Cemetery Cross Ring",
+  "desc": "925 스털링 실버 · 밴드 전체를 감싸는 크로스 패턴을 뚫음(컷아웃) 기법으로 살린 와이드 링. 유화 착색으로 음영이 깊게 남습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-cemetery-cross",
+  "cover": "images/thumbs/ring-cemetery-cross-1.jpg",
+  "gallery": [
+   "images/ring-cemetery-cross-1.jpg",
+   "images/ring-cemetery-cross-2.jpg",
+   "images/ring-cemetery-cross-3.jpg",
+   "images/ring-cemetery-cross-4.jpg",
+   "images/ring-cemetery-cross-5.jpg",
+   "images/ring-cemetery-cross-6.jpg",
+   "images/ring-cemetery-cross-7.jpg",
+   "images/ring-cemetery-cross-8.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-cemetery-cross-1.jpg",
+   "images/thumbs/ring-cemetery-cross-2.jpg",
+   "images/thumbs/ring-cemetery-cross-3.jpg",
+   "images/thumbs/ring-cemetery-cross-4.jpg",
+   "images/thumbs/ring-cemetery-cross-5.jpg",
+   "images/thumbs/ring-cemetery-cross-6.jpg",
+   "images/thumbs/ring-cemetery-cross-7.jpg",
+   "images/thumbs/ring-cemetery-cross-8.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "세메터리 크로스 파베 링",
+  "en": "Cemetery Cross Pavé Ring",
+  "desc": "925 스털링 실버 · 세메터리 크로스 라인에 스톤 세팅을 더한 파베 버전. 손가락을 감싸는 넓은 밴드가 포인트입니다 · 주문제작 1~2주 소요",
+  "slug": "ring-cemetery-cross-pave",
+  "cover": "images/thumbs/ring-cemetery-cross-pave-1.jpg",
+  "gallery": [
+   "images/ring-cemetery-cross-pave-1.jpg",
+   "images/ring-cemetery-cross-pave-2.jpg",
+   "images/ring-cemetery-cross-pave-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-cemetery-cross-pave-1.jpg",
+   "images/thumbs/ring-cemetery-cross-pave-2.jpg",
+   "images/thumbs/ring-cemetery-cross-pave-3.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "키퍼 링",
+  "en": "Keeper Ring",
+  "desc": "925 스털링 실버 · 밴드 가운데 크로스를 두고 좌우를 플로럴 스크롤로 채운 클래식 와이드 링. 볼륨감 있는 실루엣입니다 · 주문제작 1~2주 소요",
+  "slug": "ring-keeper",
+  "cover": "images/thumbs/ring-keeper-1.jpg",
+  "gallery": [
+   "images/ring-keeper-1.jpg",
+   "images/ring-keeper-2.jpg",
+   "images/ring-keeper-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-keeper-1.jpg",
+   "images/thumbs/ring-keeper-2.jpg",
+   "images/thumbs/ring-keeper-3.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "크로스 링",
+  "en": "Cross Ring",
+  "desc": "925 스털링 실버 · 얇은 밴드 위에 십자 모티프 하나를 올린 데일리 링. 단독·레이어드 모두 잘 어울립니다 · 주문제작 1~2주 소요",
+  "slug": "ring-cross",
+  "cover": "images/thumbs/ring-cross-1.jpg",
+  "gallery": [
+   "images/ring-cross-1.jpg",
+   "images/ring-cross-2.jpg",
+   "images/ring-cross-3.jpg",
+   "images/ring-cross-4.jpg",
+   "images/ring-cross-5.jpg",
+   "images/ring-cross-6.jpg",
+   "images/ring-cross-7.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-cross-1.jpg",
+   "images/thumbs/ring-cross-2.jpg",
+   "images/thumbs/ring-cross-3.jpg",
+   "images/thumbs/ring-cross-4.jpg",
+   "images/thumbs/ring-cross-5.jpg",
+   "images/thumbs/ring-cross-6.jpg",
+   "images/thumbs/ring-cross-7.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "크로스 테일 링",
+  "en": "Cross Tail Ring",
+  "desc": "925 스털링 실버 · 십자 모티프의 꼬리가 밴드를 감아 올라가는 라인과 비즈 레일 디테일이 특징인 링 · 주문제작 1~2주 소요",
+  "slug": "ring-cross-tail",
+  "cover": "images/thumbs/ring-cross-tail-1.jpg",
+  "gallery": [
+   "images/ring-cross-tail-1.jpg",
+   "images/ring-cross-tail-2.jpg",
+   "images/ring-cross-tail-3.jpg",
+   "images/ring-cross-tail-4.jpg",
+   "images/ring-cross-tail-5.jpg",
+   "images/ring-cross-tail-6.jpg",
+   "images/ring-cross-tail-7.jpg",
+   "images/ring-cross-tail-8.jpg",
+   "images/ring-cross-tail-9.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-cross-tail-1.jpg",
+   "images/thumbs/ring-cross-tail-2.jpg",
+   "images/thumbs/ring-cross-tail-3.jpg",
+   "images/thumbs/ring-cross-tail-4.jpg",
+   "images/thumbs/ring-cross-tail-5.jpg",
+   "images/thumbs/ring-cross-tail-6.jpg",
+   "images/thumbs/ring-cross-tail-7.jpg",
+   "images/thumbs/ring-cross-tail-8.jpg",
+   "images/thumbs/ring-cross-tail-9.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "대거 하트 링",
+  "en": "Dagger Heart Ring",
+  "desc": "925 스털링 실버 · 하트를 단검이 꿰뚫는 모티프를 입체적으로 살린 와이드 밴드 링. 유화 착색으로 음영이 깊게 남습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-dagger-heart",
+  "cover": "images/thumbs/ring-dagger-heart-1.jpg",
+  "gallery": [
+   "images/ring-dagger-heart-1.jpg",
+   "images/ring-dagger-heart-2.jpg",
+   "images/ring-dagger-heart-3.jpg",
+   "images/ring-dagger-heart-4.jpg",
+   "images/ring-dagger-heart-5.jpg",
+   "images/ring-dagger-heart-6.jpg",
+   "images/ring-dagger-heart-7.jpg",
+   "images/ring-dagger-heart-8.jpg",
+   "images/ring-dagger-heart-9.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-dagger-heart-1.jpg",
+   "images/thumbs/ring-dagger-heart-2.jpg",
+   "images/thumbs/ring-dagger-heart-3.jpg",
+   "images/thumbs/ring-dagger-heart-4.jpg",
+   "images/thumbs/ring-dagger-heart-5.jpg",
+   "images/thumbs/ring-dagger-heart-6.jpg",
+   "images/thumbs/ring-dagger-heart-7.jpg",
+   "images/thumbs/ring-dagger-heart-8.jpg",
+   "images/thumbs/ring-dagger-heart-9.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "플로럴 하트 링",
+  "en": "Floral Heart Ring",
+  "desc": "925 스털링 실버 · 하트 모티프를 플로럴 스크롤이 감싸는 와이드 밴드 링. 손등 쪽 볼륨이 살아 있습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-floral-heart",
+  "cover": "images/thumbs/ring-floral-heart-1.jpg",
+  "gallery": [
+   "images/ring-floral-heart-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-floral-heart-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "클래식 와이드 밴드 링",
+  "en": "Classic Wide Band Ring",
+  "desc": "925 스털링 실버 · 각인 디테일이 들어간 두툼한 라운드 밴드 링. 단독 착용에 무게감이 있습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-classic-wide-band",
+  "cover": "images/thumbs/ring-classic-wide-band-1.jpg",
+  "gallery": [
+   "images/ring-classic-wide-band-1.jpg",
+   "images/ring-classic-wide-band-2.jpg",
+   "images/ring-classic-wide-band-3.jpg",
+   "images/ring-classic-wide-band-4.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-classic-wide-band-1.jpg",
+   "images/thumbs/ring-classic-wide-band-2.jpg",
+   "images/thumbs/ring-classic-wide-band-3.jpg",
+   "images/thumbs/ring-classic-wide-band-4.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "플로럴 크로스 파베 링",
+  "en": "Floral Cross Pavé Ring",
+  "desc": "925 스털링 실버 · 밴드 센터 라인에 파베 스톤을 세팅하고 플로럴 크로스 디테일을 살린 슬림 링 · 주문제작 1~2주 소요",
+  "slug": "ring-floral-pave",
+  "cover": "images/thumbs/ring-floral-pave-1.jpg",
+  "gallery": [
+   "images/ring-floral-pave-1.jpg",
+   "images/ring-floral-pave-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-floral-pave-1.jpg",
+   "images/thumbs/ring-floral-pave-2.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "베이비 더블 플로럴 크로스 링",
+  "en": "Baby Double Floral Cross Ring",
+  "desc": "925 스털링 실버 · 작은 플로럴 크로스가 연속으로 이어지는 슬림 밴드 링. 크로스 센터에 스톤을 세팅했습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-baby-double-floral",
+  "cover": "images/thumbs/ring-baby-double-floral-1.jpg",
+  "gallery": [
+   "images/ring-baby-double-floral-1.jpg",
+   "images/ring-baby-double-floral-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-baby-double-floral-1.jpg",
+   "images/thumbs/ring-baby-double-floral-2.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "패턴 밴드 링",
+  "en": "Pattern Band Ring",
+  "desc": "925 스털링 실버 · 밴드 전체에 반복 패턴을 새긴 슬림 링. 겹쳐 착용하기 좋은 두께입니다 · 주문제작 1~2주 소요",
+  "slug": "ring-pattern-band",
+  "cover": "images/thumbs/ring-pattern-band-1.jpg",
+  "gallery": [
+   "images/ring-pattern-band-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-pattern-band-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "포에버 스페이서 링",
+  "en": "Forever Spacer Ring",
+  "desc": "925 스털링 실버 · 6mm 폭의 묵직한 스페이서 라인. 레이어드의 중심이 되는 링입니다 · 주문제작 1~2주 소요",
+  "slug": "ring-forever",
+  "cover": "images/thumbs/ring-forever-1.jpg",
+  "gallery": [
+   "images/ring-forever-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-forever-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "스페이서 링",
+  "en": "Spacer Ring",
+  "desc": "925 스털링 실버 · 레터링 각인이 들어간 플랫 스페이서 링. 깔끔한 두께감으로 단독·레이어드에 모두 어울립니다 · 주문제작 1~2주 소요",
+  "slug": "ring-spacer-white",
+  "cover": "images/thumbs/ring-spacer-white-1.jpg",
+  "gallery": [
+   "images/ring-spacer-white-1.jpg",
+   "images/ring-spacer-white-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-spacer-white-1.jpg",
+   "images/thumbs/ring-spacer-white-2.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "스페이서 링 세트",
+  "en": "Spacer Ring Set",
+  "desc": "925 스털링 실버 · 각인이 다른 스페이서 링 2종 세트. 커플 링이나 레이어드용으로 추천합니다 · 주문제작 1~2주 소요",
+  "slug": "ring-spacer-pair",
+  "cover": "images/thumbs/ring-spacer-pair-1.jpg",
+  "gallery": [
+   "images/ring-spacer-pair-1.jpg",
+   "images/ring-spacer-pair-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-spacer-pair-1.jpg",
+   "images/thumbs/ring-spacer-pair-2.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "볼 체인 네크리스",
+  "en": "Ball Chain Necklace",
+  "desc": "925 스털링 실버 · 볼 체인에 크로스 볼 펜던트를 조합한 네크리스. 각인 배럴 클래스프로 여밉니다 · 주문제작 1~2주 소요",
+  "slug": "necklace-ballchain",
+  "cover": "images/thumbs/necklace-ballchain-1.jpg",
+  "gallery": [
+   "images/necklace-ballchain-1.jpg",
+   "images/necklace-ballchain-2.jpg",
+   "images/necklace-ballchain-3.jpg",
+   "images/necklace-ballchain-4.jpg",
+   "images/necklace-ballchain-5.jpg",
+   "images/necklace-ballchain-6.jpg",
+   "images/necklace-ballchain-7.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-ballchain-1.jpg",
+   "images/thumbs/necklace-ballchain-2.jpg",
+   "images/thumbs/necklace-ballchain-3.jpg",
+   "images/thumbs/necklace-ballchain-4.jpg",
+   "images/thumbs/necklace-ballchain-5.jpg",
+   "images/thumbs/necklace-ballchain-6.jpg",
+   "images/thumbs/necklace-ballchain-7.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "스몰 크로스 펜던트 네크리스",
+  "en": "Small Cross Pendant Necklace",
+  "desc": "925 스털링 실버 · 볼 체인에 플로럴 베일의 스몰 크로스 펜던트를 매치한 네크리스 · 주문제작 1~2주 소요",
+  "slug": "necklace-cross-pendant",
+  "cover": "images/thumbs/necklace-cross-pendant-1.jpg",
+  "gallery": [
+   "images/necklace-cross-pendant-1.jpg",
+   "images/necklace-cross-pendant-2.jpg",
+   "images/necklace-cross-pendant-3.jpg",
+   "images/necklace-cross-pendant-4.jpg",
+   "images/necklace-cross-pendant-5.jpg",
+   "images/necklace-cross-pendant-6.jpg",
+   "images/necklace-cross-pendant-7.jpg",
+   "images/necklace-cross-pendant-8.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-cross-pendant-1.jpg",
+   "images/thumbs/necklace-cross-pendant-2.jpg",
+   "images/thumbs/necklace-cross-pendant-3.jpg",
+   "images/thumbs/necklace-cross-pendant-4.jpg",
+   "images/thumbs/necklace-cross-pendant-5.jpg",
+   "images/thumbs/necklace-cross-pendant-6.jpg",
+   "images/thumbs/necklace-cross-pendant-7.jpg",
+   "images/thumbs/necklace-cross-pendant-8.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "퍼플 파베 더블 크로스 네크리스",
+  "en": "Purple Pavé Double Cross Necklace",
+  "desc": "925 스털링 실버 · 퍼플 파베 크로스와 스몰 크로스를 나란히 매단 네크리스. 체인 길이 조절 가능 · 주문제작 1~2주 소요",
+  "slug": "necklace-purple-pave-double",
+  "cover": "images/thumbs/necklace-purple-pave-double-1.jpg",
+  "gallery": [
+   "images/necklace-purple-pave-double-1.jpg",
+   "images/necklace-purple-pave-double-2.jpg",
+   "images/necklace-purple-pave-double-3.jpg",
+   "images/necklace-purple-pave-double-4.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-purple-pave-double-1.jpg",
+   "images/thumbs/necklace-purple-pave-double-2.jpg",
+   "images/thumbs/necklace-purple-pave-double-3.jpg",
+   "images/thumbs/necklace-purple-pave-double-4.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "롤 체인 네크리스",
+  "en": "Roll Chain Necklace",
+  "desc": "925 스털링 실버 · 가는 롤 체인 단독 네크리스. 펜던트를 따로 매치하기 좋습니다 · 주문제작 1~2주 소요",
+  "slug": "necklace-roll-chain",
+  "cover": "images/thumbs/necklace-roll-chain-1.jpg",
+  "gallery": [
+   "images/necklace-roll-chain-1.jpg",
+   "images/necklace-roll-chain-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-roll-chain-1.jpg",
+   "images/thumbs/necklace-roll-chain-2.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "스몰 크로스 펜던트 (1995 베일)",
+  "en": "Small Cross Pendant with Bail",
+  "desc": "925 스털링 실버 · 1995 각인이 들어간 라운드 베일에 스몰 크로스가 달린 펜던트. 체인은 별도입니다 · 주문제작 1~2주 소요",
+  "slug": "pendant-1995-cross",
+  "cover": "images/thumbs/pendant-1995-cross-1.jpg",
+  "gallery": [
+   "images/pendant-1995-cross-1.jpg",
+   "images/pendant-1995-cross-2.jpg",
+   "images/pendant-1995-cross-3.jpg",
+   "images/pendant-1995-cross-4.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-1995-cross-1.jpg",
+   "images/thumbs/pendant-1995-cross-2.jpg",
+   "images/thumbs/pendant-1995-cross-3.jpg",
+   "images/thumbs/pendant-1995-cross-4.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "대거 크로스 펜던트",
+  "en": "Dagger Cross Pendant",
+  "desc": "925 스털링 실버 · 하단이 단검처럼 길게 뻗은 대거 크로스 펜던트. 약 3.5cm 크기로 단독 착용에 잘 어울립니다 · 주문제작 1~2주 소요",
+  "slug": "pendant-dagger-cross",
+  "cover": "images/thumbs/pendant-dagger-cross-1.jpg",
+  "gallery": [
+   "images/pendant-dagger-cross-1.jpg",
+   "images/pendant-dagger-cross-2.jpg",
+   "images/pendant-dagger-cross-3.jpg",
+   "images/pendant-dagger-cross-4.jpg",
+   "images/pendant-dagger-cross-5.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-dagger-cross-1.jpg",
+   "images/thumbs/pendant-dagger-cross-2.jpg",
+   "images/thumbs/pendant-dagger-cross-3.jpg",
+   "images/thumbs/pendant-dagger-cross-4.jpg",
+   "images/thumbs/pendant-dagger-cross-5.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "크로스 펜던트 (베일)",
+  "en": "Cross Pendant with Bail",
+  "desc": "925 스털링 실버 · 플로럴 베일에 작은 십자가 달린 펜던트. 체인은 별도입니다 · 주문제작 1~2주 소요",
+  "slug": "pendant-cross-bail",
+  "cover": "images/thumbs/pendant-cross-bail-1.jpg",
+  "gallery": [
+   "images/pendant-cross-bail-1.jpg",
+   "images/pendant-cross-bail-2.jpg",
+   "images/pendant-cross-bail-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-cross-bail-1.jpg",
+   "images/thumbs/pendant-cross-bail-2.jpg",
+   "images/thumbs/pendant-cross-bail-3.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "컬러 스톤 크로스 펜던트",
+  "en": "Color Stone Cross Pendant",
+  "desc": "925 스털링 실버 · 퍼플·블루·그린·핑크 컬러 스톤을 세팅한 크로스 펜던트. 컬러별 선택 가능 · 주문제작 1~2주 소요",
+  "slug": "pendant-color-stone-cross",
+  "cover": "images/thumbs/pendant-color-stone-cross-1.jpg",
+  "gallery": [
+   "images/pendant-color-stone-cross-1.jpg",
+   "images/pendant-color-stone-cross-2.jpg",
+   "images/pendant-color-stone-cross-3.jpg",
+   "images/pendant-color-stone-cross-4.jpg",
+   "images/pendant-color-stone-cross-5.jpg",
+   "images/pendant-color-stone-cross-6.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-color-stone-cross-1.jpg",
+   "images/thumbs/pendant-color-stone-cross-2.jpg",
+   "images/thumbs/pendant-color-stone-cross-3.jpg",
+   "images/thumbs/pendant-color-stone-cross-4.jpg",
+   "images/thumbs/pendant-color-stone-cross-5.jpg",
+   "images/thumbs/pendant-color-stone-cross-6.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "크로스 펜던트 컬렉션",
+  "en": "Cross Pendant Collection",
+  "desc": "925 스털링 실버 · 필리그리·컷아웃·대거 등 서로 다른 쉐입의 크로스 펜던트 5종. 개별 선택 가능합니다 · 주문제작 1~2주 소요",
+  "slug": "pendant-collection",
+  "cover": "images/thumbs/pendant-collection-1.jpg",
+  "gallery": [
+   "images/pendant-collection-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-collection-1.jpg"
+  ]
+ },
+ {
+  "cat": "BRACELET",
+  "title": "체인 & 크로스 브레이슬릿 컬렉션",
+  "en": "Chain & Cross Bracelet Collection",
+  "desc": "925 스털링 실버 · 단독 착용이나 시계와의 레이어드에 어울리는 체인·크로스 브레이슬릿 라인 · 주문제작 1~2주 소요",
+  "slug": "bracelet-collection",
+  "cover": "images/thumbs/bracelet-collection-1.jpg",
+  "gallery": [
+   "images/bracelet-collection-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/bracelet-collection-1.jpg"
+  ]
+ },
+ {
+  "cat": "BRACELET",
+  "title": "컬러 스트링 브레이슬릿",
+  "en": "Color String Bracelet",
+  "desc": "925 스털링 실버 참 + 컬러 스트링 · 레드·옐로우·핑크·퍼플·블랙·블루 컬러 선택 가능 · 주문제작 1~2주 소요",
+  "slug": "bracelet-color-string",
+  "cover": "images/thumbs/bracelet-color-string-1.jpg",
+  "gallery": [
+   "images/bracelet-color-string-1.jpg",
+   "images/bracelet-color-string-2.jpg",
+   "images/bracelet-color-string-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/bracelet-color-string-1.jpg",
+   "images/thumbs/bracelet-color-string-2.jpg",
+   "images/thumbs/bracelet-color-string-3.jpg"
+  ]
+ }
 ];
 
 const grid = document.getElementById("productGrid");
@@ -984,6 +1039,7 @@ function openModal(slug) {
   if (!current) return;
   document.getElementById("modalCat").textContent = current.cat;
   document.getElementById("modalTitle").textContent = current.title;
+  document.getElementById("modalEn").textContent = current.en || "";
   document.getElementById("modalDesc").textContent = current.desc;
   paintThumbs();
   showShot(0);
