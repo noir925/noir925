@@ -936,7 +936,7 @@ function render(filter) {
     <article class="card" data-slug="${p.slug}" tabindex="0" role="button" aria-label="${p.title} 상세 보기">
       <div class="card-img">
         <img src="${p.cover}" alt="${p.title}" loading="lazy" />
-        <span class="card-count">${p.gallery.length} PHOTOS</span>
+        <span class="card-count">${p.gallery.length} ${p.gallery.length > 1 ? "PHOTOS" : "PHOTO"}</span>
       </div>
       <div class="card-body">
         <div class="card-cat">${p.cat}</div>
