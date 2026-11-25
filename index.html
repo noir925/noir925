@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOIR 925 — 925 Sterling Silver</title>
-  <meta name="description" content="노아르 925 (NOIR 925) · 925 스털링 실버 주문제작 셀렉트샵" />
+  <title>NOIR 925 — 925 Sterling Silver &amp; Apparel</title>
+  <meta name="description" content="노아르 925 (NOIR 925) · 925 스털링 실버 주얼리와 의류 주문제작 셀렉트샵" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -253,6 +253,67 @@
     }
     .tab-btn .num { opacity: 0.55; margin-left: 5px; font-size: 11px; }
 
+    .tab-btn em.tab-sub {
+      font-style: normal;
+      font-size: 10px;
+      letter-spacing: 0.02em;
+      opacity: 0.55;
+      margin-left: 6px;
+    }
+    .subtabs {
+      display: flex;
+      gap: 6px;
+      margin: -6px 0 24px;
+      padding: 7px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.025);
+      width: fit-content;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+    .subtabs[hidden] { display: none; }
+    .sub-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--muted);
+      padding: 6px 15px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .sub-btn:hover { color: var(--silver); }
+    .sub-btn.active {
+      background: var(--gold-soft);
+      border-color: rgba(200, 168, 107, 0.5);
+      color: var(--gold);
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 16px;
+    }
+    .section-head.gap { margin-top: 40px; }
+    .section-head .t {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .section-head .line { flex: 1 1 auto; height: 1px; background: var(--border); }
+    .section-head .ko {
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
     /* Grid */
     .grid {
       display: grid;
@@ -482,7 +543,7 @@
     <div class="hero-tag">925 STERLING SILVER · SELECT SHOP</div>
     <h1>NOIR 925</h1>
     <p>
-      묵직한 질감과 정교한 디테일이 담긴 925 스털링 실버 컬렉션.<br />
+      묵직한 질감과 정교한 디테일이 담긴 925 스털링 실버 컬렉션과 애슬레저.<br />
       전 제품 주문 확인 후 제작되는 <strong>1~2주 주문제작</strong> 상품으로 진행됩니다.
     </p>
     <div class="hero-event">
@@ -510,10 +571,17 @@
       <button class="tab-btn" data-cat="NECKLACE">NECKLACE</button>
       <button class="tab-btn" data-cat="PENDANT">PENDANT</button>
       <button class="tab-btn" data-cat="BRACELET">BRACELET</button>
+      <button class="tab-btn" data-cat="APPAREL">APPAREL<em class="tab-sub">의류</em></button>
     </div>
   </div>
 
-  <div class="grid" id="productGrid"></div>
+  <div class="subtabs" id="subtabs" hidden>
+    <button class="sub-btn active" data-sub="APPAREL">전체</button>
+    <button class="sub-btn" data-sub="TOP">상의 (TOP)</button>
+    <button class="sub-btn" data-sub="BOTTOM">하의 (BOTTOM)</button>
+  </div>
+
+  <div id="productGrid"></div>
 </section>
 
 <section class="notice-sec">
@@ -1067,6 +1135,545 @@ const products = [
    "images/thumbs/bracelet-color-string-2.jpg",
    "images/thumbs/bracelet-color-string-3.jpg"
   ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "필리그리 슬리브 집업 후디 — 실버",
+  "en": "Filigree Sleeve Zip Hoodie Silver",
+  "desc": "925 실버 컬러 자수 · 양 소매를 가득 채운 필리그리(금은 세공) 자수와 가슴 홀스슈 라인, 등판 대형 홀스슈 자수까지 앞뒤로 다른 무드 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-filigree-zip-silver",
+  "cover": "images/apparel-filigree-zip-silver-1.jpg",
+  "gallery": [
+   "images/apparel-filigree-zip-silver-1.jpg",
+   "images/apparel-filigree-zip-silver-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-filigree-zip-silver-1.jpg",
+   "images/thumbs/apparel-filigree-zip-silver-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "필리그리 슬리브 집업 후디 — 핑크",
+  "en": "Filigree Sleeve Zip Hoodie Pink",
+  "desc": "핑크 자수 필리그리 소매와 등판 홀스슈 그래픽 · 네이비 바탕에 핑크 배색이 선명한 컬러웨이 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-filigree-zip-pink",
+  "cover": "images/apparel-filigree-zip-pink-1.jpg",
+  "gallery": [
+   "images/apparel-filigree-zip-pink-1.jpg",
+   "images/apparel-filigree-zip-pink-2.jpg",
+   "images/apparel-filigree-zip-pink-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-filigree-zip-pink-1.jpg",
+   "images/thumbs/apparel-filigree-zip-pink-2.jpg",
+   "images/thumbs/apparel-filigree-zip-pink-3.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "필리그리 슬리브 집업 후디 — 그린",
+  "en": "Filigree Sleeve Zip Hoodie Green",
+  "desc": "그린 자수 필리그리 소매와 등판 홀스슈 그래픽 · 네이비 바탕에 그린 배색 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-filigree-zip-green",
+  "cover": "images/apparel-filigree-zip-green-1.jpg",
+  "gallery": [
+   "images/apparel-filigree-zip-green-1.jpg",
+   "images/apparel-filigree-zip-green-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-filigree-zip-green-1.jpg",
+   "images/thumbs/apparel-filigree-zip-green-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "필리그리 슬리브 풀오버 후디 — 실버",
+  "en": "Filigree Sleeve Pullover Hoodie Silver",
+  "desc": "양 소매 필리그리 자수와 가슴 스몰 홀스슈, 등판 대형 홀스슈 자수 · 집업 대신 캥거루 포켓의 풀오버 실루엣 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-filigree-pullover",
+  "cover": "images/apparel-filigree-pullover-1.jpg",
+  "gallery": [
+   "images/apparel-filigree-pullover-1.jpg",
+   "images/apparel-filigree-pullover-2.jpg",
+   "images/apparel-filigree-pullover-3.jpg",
+   "images/chart-pullover-hood.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-filigree-pullover-1.jpg",
+   "images/thumbs/apparel-filigree-pullover-2.jpg",
+   "images/thumbs/apparel-filigree-pullover-3.jpg",
+   "images/thumbs/chart-pullover-hood.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "멀티 컬러 크로스 집업 후디",
+  "en": "Multi Color Cross Zip Hoodie",
+  "desc": "가슴 스크롤 패치와 등판 멀티 컬러 크로스 클러스터 자수, 소매 컬러 레터링까지 · 네이비 바탕에 컬러 배색이 들어간 포인트 모델 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-multicolor-cross-zip",
+  "cover": "images/apparel-multicolor-cross-zip-1.jpg",
+  "gallery": [
+   "images/apparel-multicolor-cross-zip-1.jpg",
+   "images/apparel-multicolor-cross-zip-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-multicolor-cross-zip-1.jpg",
+   "images/thumbs/apparel-multicolor-cross-zip-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "데들리 돌 집업 후디",
+  "en": "Deadly Doll Zip Hoodie",
+  "desc": "한쪽 소매 데들리 돌 레터링과 반대쪽 소매 그래픽 패치, 등판 인물 그래픽 홀스슈 프린트 · 블랙 바탕에 핑크 포인트 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-deadly-doll-zip",
+  "cover": "images/apparel-deadly-doll-zip-1.jpg",
+  "gallery": [
+   "images/apparel-deadly-doll-zip-1.jpg",
+   "images/apparel-deadly-doll-zip-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-deadly-doll-zip-1.jpg",
+   "images/thumbs/apparel-deadly-doll-zip-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "레터링 슬리브 하프집업",
+  "en": "Lettering Sleeve Half-Zip",
+  "desc": "양 소매 스크롤 레터링 프린트와 가슴 로고 자수 · 목까지 올라오는 하프집업 카라와 캥거루 포켓 · 네이비 컬러웨이 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-lettering-halfzip",
+  "cover": "images/apparel-lettering-halfzip-1.jpg",
+  "gallery": [
+   "images/apparel-lettering-halfzip-1.jpg",
+   "images/apparel-lettering-halfzip-2.jpg",
+   "images/apparel-lettering-halfzip-3.jpg",
+   "images/apparel-lettering-halfzip-4.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-lettering-halfzip-1.jpg",
+   "images/thumbs/apparel-lettering-halfzip-2.jpg",
+   "images/thumbs/apparel-lettering-halfzip-3.jpg",
+   "images/thumbs/apparel-lettering-halfzip-4.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "크로스 패치 하프집업",
+  "en": "Cross Patch Half-Zip",
+  "desc": "가슴에 입체 크로스 패치를 얹은 톤온톤 하프집업 · 등판은 로고 하나로 절제한 무드 · 블랙 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-cross-patch-halfzip",
+  "cover": "images/apparel-cross-patch-halfzip-1.jpg",
+  "gallery": [
+   "images/apparel-cross-patch-halfzip-1.jpg",
+   "images/apparel-cross-patch-halfzip-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-cross-patch-halfzip-1.jpg",
+   "images/thumbs/apparel-cross-patch-halfzip-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "백 프린트 하프집업",
+  "en": "Back Print Half-Zip",
+  "desc": "가슴 스몰 네임플레이트, 등판에는 아치 로고와 크로스 프린트를 크게 배치 · 네이비 컬러웨이 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-backprint-halfzip",
+  "cover": "images/apparel-backprint-halfzip-1.jpg",
+  "gallery": [
+   "images/apparel-backprint-halfzip-1.jpg",
+   "images/apparel-backprint-halfzip-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-backprint-halfzip-1.jpg",
+   "images/thumbs/apparel-backprint-halfzip-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "FOTI 스컬 프린트 풀오버 후디",
+  "en": "FOTI Skull Print Pullover Hoodie",
+  "desc": "가슴 스컬 패치와 소매 배색 패치, 등판에는 스컬과 함께 들어간 홀스슈 그래픽 · FOTI 라인 · 네이비 바탕 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-foti-skull-hoodie",
+  "cover": "images/apparel-foti-skull-hoodie-1.jpg",
+  "gallery": [
+   "images/apparel-foti-skull-hoodie-1.jpg",
+   "images/apparel-foti-skull-hoodie-2.jpg",
+   "images/chart-foti-hood.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-foti-skull-hoodie-1.jpg",
+   "images/thumbs/apparel-foti-skull-hoodie-2.jpg",
+   "images/thumbs/chart-foti-hood.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "워시드 스크롤 풀오버 후디",
+  "en": "Washed Scroll Pullover Hoodie",
+  "desc": "효소 워싱으로 색을 뺀 블랙 바탕에 소매 스크롤 그래픽과 가슴 네임플레이트 · 후드 안쪽 레터링까지 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-washed-scroll-pullover",
+  "cover": "images/apparel-washed-scroll-pullover-1.jpg",
+  "gallery": [
+   "images/apparel-washed-scroll-pullover-1.jpg",
+   "images/apparel-washed-scroll-pullover-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-washed-scroll-pullover-1.jpg",
+   "images/thumbs/apparel-washed-scroll-pullover-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "워시드 스크롤 집업 후디",
+  "en": "Washed Scroll Zip Hoodie",
+  "desc": "워싱 가공 블랙에 소매 스크롤 그래픽, 후드 안쪽 레터링, 등판은 미니멀한 로고 하나 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-washed-scroll-zip",
+  "cover": "images/apparel-washed-scroll-zip-1.jpg",
+  "gallery": [
+   "images/apparel-washed-scroll-zip-1.jpg",
+   "images/apparel-washed-scroll-zip-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-washed-scroll-zip-1.jpg",
+   "images/thumbs/apparel-washed-scroll-zip-2.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "블루 크로스 집업 후디",
+  "en": "Blue Cross Zip Hoodie",
+  "desc": "가슴 블루 크로스 패치와 소매 크로스 그래픽, 등판 블루 홀스슈 프린트 · 블랙 바탕에 블루 배색 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-blue-cross-zip",
+  "cover": "images/apparel-blue-cross-zip-1.jpg",
+  "gallery": [
+   "images/apparel-blue-cross-zip-1.jpg",
+   "images/apparel-blue-cross-zip-2.jpg",
+   "images/apparel-blue-cross-zip-3.jpg",
+   "images/chart-bluecross-zip.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-blue-cross-zip-1.jpg",
+   "images/thumbs/apparel-blue-cross-zip-2.jpg",
+   "images/thumbs/apparel-blue-cross-zip-3.jpg",
+   "images/thumbs/chart-bluecross-zip.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "플리스 하프집업 스웨트셔츠",
+  "en": "Fleece Half-Zip Sweatshirt",
+  "desc": "보아 플리스 안감 하프집업 · 가슴 톤온톤 홀스슈 자수와 스트링 디테일 · 차콜 · 남녀공용 오버핏 · 주문제작 1~2주 소요",
+  "slug": "apparel-fleece-halfzip",
+  "cover": "images/apparel-fleece-halfzip-1.jpg",
+  "gallery": [
+   "images/apparel-fleece-halfzip-1.jpg",
+   "images/apparel-fleece-halfzip-2.jpg",
+   "images/chart-halfzip-sweat.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-fleece-halfzip-1.jpg",
+   "images/thumbs/apparel-fleece-halfzip-2.jpg",
+   "images/thumbs/chart-halfzip-sweat.jpg"
+  ]
+ },
+ {
+  "cat": "TOP",
+  "sub": "TOP",
+  "title": "립 니트 하프집업",
+  "en": "Rib Knit Half-Zip",
+  "desc": "두꺼운 골지 조직의 울 블렌드 니트 하프집업 · 하이넥 카라와 실버 지퍼 · 차콜 · 남녀공용 · 주문제작 1~2주 소요",
+  "slug": "apparel-rib-knit-halfzip",
+  "cover": "images/apparel-rib-knit-halfzip-1.jpg",
+  "gallery": [
+   "images/apparel-rib-knit-halfzip-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-rib-knit-halfzip-1.jpg"
+  ]
+ },
+ {
+  "cat": "BOTTOM",
+  "sub": "BOTTOM",
+  "title": "필리그리 사이드 조거 스웨트팬츠",
+  "en": "Filigree Side Jogger Sweatpants",
+  "desc": "양 사이드에 필리그리 자수 라인을 길게 넣은 조거 팬츠 · 힙 홀스슈 자수와 밴딩 허리, 밑단 고무줄 · 블랙 · 남녀공용 · 주문제작 1~2주 소요",
+  "slug": "apparel-filigree-jogger",
+  "cover": "images/apparel-filigree-jogger-1.jpg",
+  "gallery": [
+   "images/apparel-filigree-jogger-1.jpg",
+   "images/apparel-filigree-jogger-2.jpg",
+   "images/apparel-filigree-jogger-3.jpg",
+   "images/chart-jogger-pants.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-filigree-jogger-1.jpg",
+   "images/thumbs/apparel-filigree-jogger-2.jpg",
+   "images/thumbs/apparel-filigree-jogger-3.jpg",
+   "images/thumbs/chart-jogger-pants.jpg"
+  ]
+ },
+ {
+  "cat": "BOTTOM",
+  "sub": "BOTTOM",
+  "title": "크로스 레터링 와이드 스웨트팬츠",
+  "en": "Cross Lettering Wide Sweatpants",
+  "desc": "워싱 가공 블랙 와이드 핏 · 한쪽 다리 하단 레터링 크로스 프린트와 허리 스크롤 프린트 · 밴딩 허리 · 남녀공용 · 주문제작 1~2주 소요",
+  "slug": "apparel-lettering-sweatpants",
+  "cover": "images/apparel-lettering-sweatpants-1.jpg",
+  "gallery": [
+   "images/apparel-lettering-sweatpants-1.jpg",
+   "images/apparel-lettering-sweatpants-2.jpg",
+   "images/apparel-lettering-sweatpants-3.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/apparel-lettering-sweatpants-1.jpg",
+   "images/thumbs/apparel-lettering-sweatpants-2.jpg",
+   "images/thumbs/apparel-lettering-sweatpants-3.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "플로럴 링",
+  "en": "Floral Ring",
+  "desc": "925 스털링 실버 · 다섯 장의 꽃잎이 이어지고 가운데 구슬을 얹은 플로럴 밴드 링 · 유화 착색으로 음영이 살아 있습니다 · 주문제작 1~2주 소요",
+  "slug": "ring-floral",
+  "cover": "images/ring-floral-1.jpg",
+  "gallery": [
+   "images/ring-floral-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-floral-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "더블 밴드 볼 링",
+  "en": "Double Band Ball Ring",
+  "desc": "925 스털링 실버 · 두 줄 밴드가 교차하며 스크롤과 볼 장식을 이루는 링 · 손가락을 따라 흐르는 입체 조형 · 주문제작 1~2주 소요",
+  "slug": "ring-double-band-ball",
+  "cover": "images/ring-double-band-ball-1.jpg",
+  "gallery": [
+   "images/ring-double-band-ball-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-double-band-ball-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "세그먼트 밴드 링",
+  "en": "Segment Band Ring",
+  "desc": "925 스털링 실버 · 대나무 마디처럼 이어지는 세그먼트 패턴의 밴드 링 · 데일리로 겹쳐 착용하기 좋은 슬림 라인 · 주문제작 1~2주 소요",
+  "slug": "ring-segment-band",
+  "cover": "images/ring-segment-band-1.jpg",
+  "gallery": [
+   "images/ring-segment-band-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-segment-band-1.jpg"
+  ]
+ },
+ {
+  "cat": "RING",
+  "title": "스크롤 밴드 링",
+  "en": "Scroll Band Ring",
+  "desc": "925 스털링 실버 · 크로스와 스크롤 문양이 반복되는 슬림 밴드 링 · 단독 착용과 레이어드 모두 어울립니다 · 주문제작 1~2주 소요",
+  "slug": "ring-scroll-band",
+  "cover": "images/ring-scroll-band-1.jpg",
+  "gallery": [
+   "images/ring-scroll-band-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/ring-scroll-band-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "필리그리 크로스 펜던트",
+  "en": "Filigree Cross Pendant",
+  "desc": "925 스털링 실버 · 세공 문양을 새긴 필리그리 크로스 · 빛을 받으면 문양 사이로 그림자가 깊게 떨어지는 클래식 모델 · 주문제작 1~2주 소요",
+  "slug": "pendant-filigree-cross",
+  "cover": "images/pendant-filigree-cross-1.jpg",
+  "gallery": [
+   "images/pendant-filigree-cross-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-filigree-cross-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "필리그리 크로스 파베 펜던트",
+  "en": "Filigree Cross Pavé Pendant",
+  "desc": "925 스털링 실버 · 필리그리 크로스 라인에 스톤을 세팅한 파베 버전 · 문양과 스톤이 함께 빛나는 모델 · 주문제작 1~2주 소요",
+  "slug": "pendant-filigree-cross-pave",
+  "cover": "images/pendant-filigree-cross-pave-1.jpg",
+  "gallery": [
+   "images/pendant-filigree-cross-pave-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-filigree-cross-pave-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "세메터리 크로스 펜던트",
+  "en": "Cemetery Cross Pendant",
+  "desc": "925 스털링 실버 · 불꽃처럼 뻗은 팔과 가운데 구슬이 포인트인 세메터리 크로스 · 스몰·라지 두 사이즈로 주문 가능합니다 · 주문제작 1~2주 소요",
+  "slug": "pendant-cemetery-cross",
+  "cover": "images/pendant-cemetery-cross-1.jpg",
+  "gallery": [
+   "images/pendant-cemetery-cross-1.jpg",
+   "images/pendant-cemetery-cross-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-cemetery-cross-1.jpg",
+   "images/thumbs/pendant-cemetery-cross-2.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "플로럴 크로스 펜던트 (스톤)",
+  "en": "Floral Cross Pendant with Stone",
+  "desc": "925 스털링 실버 · 꽃잎 형태로 벌어진 팔에 가운데 스톤을 세팅한 크로스 · 화이트 스톤과 블루 스톤 두 가지 · 주문제작 1~2주 소요",
+  "slug": "pendant-floral-cross-stone",
+  "cover": "images/pendant-floral-cross-stone-1.jpg",
+  "gallery": [
+   "images/pendant-floral-cross-stone-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-floral-cross-stone-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "파베 크로스 펜던트",
+  "en": "Pavé Cross Pendant",
+  "desc": "925 스털링 실버 · 전면을 스톤으로 채운 파베 크로스 · 실버와 골드 두 가지 마감 · 주문제작 1~2주 소요",
+  "slug": "pendant-pave-cross",
+  "cover": "images/pendant-pave-cross-1.jpg",
+  "gallery": [
+   "images/pendant-pave-cross-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-pave-cross-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "하트 크로스 펜던트",
+  "en": "Heart Cross Pendant",
+  "desc": "925 스털링 실버 · 크로스 가운데에 하트를 앉힌 모델 · 각 팔의 곡선과 하트 라인이 겹쳐 보이는 디자인 · 주문제작 1~2주 소요",
+  "slug": "pendant-heart-cross",
+  "cover": "images/pendant-heart-cross-1.jpg",
+  "gallery": [
+   "images/pendant-heart-cross-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-heart-cross-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "미니 파베 크로스 펜던트",
+  "en": "Mini Pavé Cross Pendant",
+  "desc": "925 스털링 실버 · 손톱만 한 크기로 전면을 스톤 세팅한 미니 크로스 · 체인에 여러 개 걸어도 좋은 사이즈 · 주문제작 1~2주 소요",
+  "slug": "pendant-mini-pave-cross",
+  "cover": "images/pendant-mini-pave-cross-1.jpg",
+  "gallery": [
+   "images/pendant-mini-pave-cross-1.jpg",
+   "images/pendant-mini-pave-cross-2.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-mini-pave-cross-1.jpg",
+   "images/thumbs/pendant-mini-pave-cross-2.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "스파이크 참",
+  "en": "Spike Charm",
+  "desc": "925 스털링 실버 · 뾰족한 스파이크 형태의 참 · 상단 각인 디테일 · 체인이나 브레이슬릿에 달아 쓰는 참 펜던트 · 주문제작 1~2주 소요",
+  "slug": "pendant-spike-charm",
+  "cover": "images/pendant-spike-charm-1.jpg",
+  "gallery": [
+   "images/pendant-spike-charm-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-spike-charm-1.jpg"
+  ]
+ },
+ {
+  "cat": "PENDANT",
+  "title": "플라워 링크 드롭 펜던트",
+  "en": "Floral Link Drop Pendant",
+  "desc": "925 스털링 실버 · 꽃문양 원형 링크 아래로 크로스가 드롭되는 펜던트 · 링크와 크로스의 볼륨 대비가 포인트 · 주문제작 1~2주 소요",
+  "slug": "pendant-floral-link-drop",
+  "cover": "images/pendant-floral-link-drop-1.jpg",
+  "gallery": [
+   "images/pendant-floral-link-drop-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/pendant-floral-link-drop-1.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "스타 링크 크로스 네크리스",
+  "en": "Star Link Cross Necklace",
+  "desc": "925 스털링 실버 · 작은 꽃·별 모양 링크가 이어지는 체인에 스몰 크로스 펜던트를 더한 네크리스 · 단독 착용에도 존재감이 있습니다 · 주문제작 1~2주 소요",
+  "slug": "necklace-star-link-cross",
+  "cover": "images/necklace-star-link-cross-1.jpg",
+  "gallery": [
+   "images/necklace-star-link-cross-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-star-link-cross-1.jpg"
+  ]
+ },
+ {
+  "cat": "NECKLACE",
+  "title": "세이프티 핀 더블 크로스 네크리스",
+  "en": "Safety Pin Double Cross Necklace",
+  "desc": "925 스털링 실버 · 옷핀 모티브에 스톤 세팅 크로스와 스몰 크로스를 함께 건 레이어드 네크리스 · 핀을 열어 길이와 위치를 조절합니다 · 주문제작 1~2주 소요",
+  "slug": "necklace-safety-pin-cross",
+  "cover": "images/necklace-safety-pin-cross-1.jpg",
+  "gallery": [
+   "images/necklace-safety-pin-cross-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/necklace-safety-pin-cross-1.jpg"
+  ]
+ },
+ {
+  "cat": "BRACELET",
+  "title": "스타 링크 브레이슬릿",
+  "en": "Star Link Bracelet",
+  "desc": "925 스털링 실버 · 꽃·별 모양 링크가 이어지는 브레이슬릿 · 잠금 부분까지 문양이 들어간 모델 · 주문제작 1~2주 소요",
+  "slug": "bracelet-star-link",
+  "cover": "images/bracelet-star-link-1.jpg",
+  "gallery": [
+   "images/bracelet-star-link-1.jpg"
+  ],
+  "thumbs": [
+   "images/thumbs/bracelet-star-link-1.jpg"
+  ]
  }
 ];
 
@@ -1082,20 +1689,64 @@ let shot = 0;         // current photo index
 document.getElementById("collectionMeta").textContent =
   `${products.length} STYLES · ${products.reduce((n, p) => n + p.gallery.length, 0)} PHOTOS`;
 
-function render(filter) {
-  const list = filter === "ALL" ? products : products.filter(p => p.cat === filter);
-  grid.innerHTML = list.map(p => `
+const CAT_LABEL = {
+  RING: "RING",
+  NECKLACE: "NECKLACE",
+  PENDANT: "PENDANT",
+  BRACELET: "BRACELET",
+  TOP: "APPAREL · TOP",
+  BOTTOM: "APPAREL · BOTTOM"
+};
+let view = { cat: "ALL", sub: "APPAREL" };
+
+const byCat = cat => products.filter(p => p.cat === cat);
+
+function groupsFor(cat, sub) {
+  if (cat === "ALL") {
+    return [
+      { label: "JEWELRY · 실버 액세서리", items: ["RING", "NECKLACE", "PENDANT", "BRACELET"].flatMap(byCat) },
+      { label: "APPAREL · 상의 (TOP)", items: byCat("TOP") },
+      { label: "APPAREL · 하의 (BOTTOM)", items: byCat("BOTTOM") }
+    ];
+  }
+  if (cat === "APPAREL") {
+    if (sub === "TOP") return [{ label: "APPAREL · 상의 (TOP)", items: byCat("TOP") }];
+    if (sub === "BOTTOM") return [{ label: "APPAREL · 하의 (BOTTOM)", items: byCat("BOTTOM") }];
+    return [
+      { label: "APPAREL · 상의 (TOP)", items: byCat("TOP") },
+      { label: "APPAREL · 하의 (BOTTOM)", items: byCat("BOTTOM") }
+    ];
+  }
+  return [{ label: cat, items: byCat(cat) }];
+}
+
+function cardHTML(p) {
+  return `
     <article class="card" data-slug="${p.slug}" tabindex="0" role="button" aria-label="${p.title} 상세 보기">
       <div class="card-img">
         <img src="${p.cover}" alt="${p.title}" loading="lazy" />
         <span class="card-count">${p.gallery.length} ${p.gallery.length > 1 ? "PHOTOS" : "PHOTO"}</span>
       </div>
       <div class="card-body">
-        <div class="card-cat">${p.cat}</div>
+        <div class="card-cat">${CAT_LABEL[p.cat] || p.cat}</div>
         <div class="card-title">${p.title}</div>
-        <div class="card-meta">925 Silver · 주문제작 1~2주</div>
+        <div class="card-meta">${p.cat === "TOP" || p.cat === "BOTTOM" ? "Apparel · 주문제작 1~2주" : "925 Silver · 주문제작 1~2주"}</div>
       </div>
-    </article>
+    </article>`;
+}
+
+function render(cat, sub) {
+  view.cat = cat;
+  if (sub) view.sub = sub;
+  const groups = groupsFor(view.cat, view.sub).filter(g => g.items.length);
+  const multi = groups.length > 1;
+  grid.innerHTML = groups.map((g, gi) => `
+    ${multi ? `<div class="section-head${gi ? " gap" : ""}">
+      <span class="t">${g.label}</span>
+      <span class="line"></span>
+      <span class="ko">${g.items.length} STYLES</span>
+    </div>` : ""}
+    <div class="grid">${g.items.map(cardHTML).join("")}</div>
   `).join("");
 
   grid.querySelectorAll(".card").forEach(el => {
@@ -1134,7 +1785,7 @@ function showShot(i) {
 function openModal(slug) {
   current = products.find(p => p.slug === slug);
   if (!current) return;
-  document.getElementById("modalCat").textContent = current.cat;
+  document.getElementById("modalCat").textContent = CAT_LABEL[current.cat] || current.cat;
   document.getElementById("modalTitle").textContent = current.title;
   document.getElementById("modalEn").textContent = current.en || "";
   document.getElementById("modalDesc").textContent = current.desc;
@@ -1151,11 +1802,26 @@ function closeModal() {
   current = null;
 }
 
+const subtabs = document.getElementById("subtabs");
+
 tabs.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     tabs.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    render(btn.dataset.cat);
+    const cat = btn.dataset.cat;
+    const isApparel = cat === "APPAREL";
+    subtabs.hidden = !isApparel;
+    subtabs.querySelectorAll(".sub-btn").forEach(b =>
+      b.classList.toggle("active", b.dataset.sub === "APPAREL"));
+    render(cat, "APPAREL");
+  });
+});
+
+subtabs.querySelectorAll(".sub-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    subtabs.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render("APPAREL", btn.dataset.sub);
   });
 });
 
